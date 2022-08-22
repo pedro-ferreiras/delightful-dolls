@@ -11,8 +11,12 @@ Booking.delete_all
 Doll.delete_all
 
 puts "Seeding DB"
-User.create!(first_name: "Pedro", last_name: "Ferreira", email: "pedro@dolls.com", password: "ilovedolls")
-User.create!(first_name: "Leith", last_name: "Atia", email: "leith@dolls.com", password: "ilovedolls")
-User.create!(first_name: "Will", last_name: "May", email: "may@dolls.com", password: "ilovedolls")
+user1 = User.create!(first_name: "Pedro", last_name: "Ferreira", email: "pedro@dolls.com", password: "ilovedolls")
+user2 = User.create!(first_name: "Leith", last_name: "Atia", email: "leith@dolls.com", password: "ilovedolls")
+user3 = User.create!(first_name: "Will", last_name: "May", email: "may@dolls.com", password: "ilovedolls")
 
-# Doll.create!(name: "Annabelle", condition: "poor", cursed: true)
+Doll.create!(name: "Annabelle", condition: "poor", cursed: true, user_id: user1.id)
+Doll.create!(name: "Chucky", condition: "good", cursed: true, user_id: user1.id)
+Doll.create!(name: "Barbie", condition: "good", cursed: false, user_id: user2.id)
+
+puts "finished"
