@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   }
 
   root to: "pages#home"
-  resources :dolls, only: %i[index show new create update]
+  # resources :users, only: %i[create new]
+  # do
+    resources :dolls, only: %i[index show new create update]
+  # end
 end
