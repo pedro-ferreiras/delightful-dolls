@@ -1,1 +1,22 @@
-<%= @doll.name %>
+
+<% if @doll.cursed == true%>
+ <% curse = "yes" %>
+<%else %>
+ <% curse = "no" %>
+<% end %>
+
+<div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+ <div class="card p-4 bg-light.bg-gradient">
+  <div class=" image d-flex flex-column justify-content-center align-items-center">
+    <img src="#" height="150" width="150">
+    <span class="name mt-3" ><%= @doll.name %></span>
+    <span class="state mt-3">cursed: <%=curse%></span>
+    <span class="condition mt-3">condition: <%= @doll.condition %></span>
+    <span class="condition mt-3">description: <%= %></span>
+  </div>
+  </div>
+</div>
+
+<div class="text-decoration-none container mt-4 mb-4 p-3 d-flex justify-content-center ">
+<%=  link_to '<< Go back', dolls_path %>
+</div>
