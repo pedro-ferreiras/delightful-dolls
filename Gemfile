@@ -3,8 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
-# Gemfile
-gem "dotenv-rails", groups: [:development, :test]
+
+# Cloudinary
+gem "cloudinary"
 
 # Devise
 gem "devise"
