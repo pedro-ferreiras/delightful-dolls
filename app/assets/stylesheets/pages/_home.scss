@@ -1,1 +1,13 @@
 // Specific CSS for your home-page
+.landing-page {
+  img {
+    height: 500px;
+  }
+
+  .content {
+    position: absolute;
+    top: 30%;
+    margin: auto;
+    margin: 2em;
+  }
+}
