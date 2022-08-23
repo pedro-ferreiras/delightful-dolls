@@ -1,7 +1,11 @@
 <h1>Dolls...</h1>
 
-<% @dolls.each do |doll| %>
-  <p><%= link_to doll.name, doll_path(doll)%></p>
-<% end %>
+<div class="cards">
+  <% @dolls.each do |doll| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(#)">
+      <%= link_to doll.name, doll_path(doll)%></p>
+    </div>
+  <% end %>
+</div>
 
 <%= link_to "Create a new doll", new_doll_path %>
