@@ -6,4 +6,10 @@ class DollsController < ApplicationController
   def show
     @doll = Doll.find(params[:id])
   end
+
+  def new
+  end
+
+  def create
+  end
 end
