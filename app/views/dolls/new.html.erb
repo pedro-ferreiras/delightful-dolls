@@ -1,0 +1,8 @@
+<h1>Create a new doll</h1>
+
+<%= simple_form_for (@doll) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :condition %>
+  <%= f.input :cursed, as: :boolean %>
+  <%= f.submit %>
+<% end %>
