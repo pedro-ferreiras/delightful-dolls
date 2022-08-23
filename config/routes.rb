@@ -8,9 +8,13 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
   root to: "pages#home"
-  # resources :users, only: %i[create new]
-  # do
-    resources :dolls, only: %i[index show new create update]
-  # end
+
+  resources :dolls, only: %i[index show new create update]
+  resources :users, only: :show
+
 end
