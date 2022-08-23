@@ -1,5 +1,5 @@
 <h1>Dolls...</h1>
 
 <% @dolls.each do |doll| %>
-  <p><%= doll.name %></p>
+  <p><%= link_to doll.name, doll_path(doll)%></p>
 <% end %>
