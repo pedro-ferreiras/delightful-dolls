@@ -12,11 +12,16 @@
 
   <body class="d-flex flex-column min-vh-100">
 
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
-   <%= render "shared/navbar" %>
-   <%= yield %>
-   <%= render "shared/footer" %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%# Show navbar if not on landing page %>
+    <%= render "shared/navbar" if controller_name != 'pages' && action_name != 'home' %>
+
+    <%= yield %>
+
+    <%# Show footer if not on landing page %>
+    <%= render "shared/footer" if controller_name != 'pages' && action_name != 'home' %>
 
   </body>
 </html>
