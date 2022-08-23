@@ -10,16 +10,21 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body class="d-flex flex-column min-vh-100">
+  <body>
 
     <%# Show navbar if not on landing page %>
     <% if controller_name != 'pages' && action_name != 'home' %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= render "shared/navbar"  %>
+      <div class="d-flex flex-column min-vh-100">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= render "shared/navbar"  %>
+        <%= yield %>
+      </div>
+    <% else %>
+      <%= yield %>
     <% end %>
 
-    <%= yield %>
+
 
     <%# Show footer if not on landing page %>
     <%= render "shared/footer" if controller_name != 'pages' && action_name != 'home' %>
