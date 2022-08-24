@@ -1,9 +1,12 @@
-<h1>Create a new doll</h1>
-
-<%= simple_form_for (@doll) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :condition %>
-  <%= f.input :description %>
-  <%= f.input :cursed, as: :boolean %>
-  <%= f.submit %>
-<% end %>
+<div class="container  mt-3">
+  <h1>Create a new doll</h1>
+  <%= simple_form_for (@doll) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :condition %>
+    <%= f.input :description %>
+    <%= f.input :cursed, as: :boolean %>
+    <div class="btn btn-ghost mb-5 mt-2">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
