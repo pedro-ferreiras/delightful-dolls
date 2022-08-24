@@ -1,5 +1,5 @@
 <div class="container  mt-3">
-  <h1 class="mt-2">Dolls</h1>
+  <h1 class="mt-2">Select your doll...</h1>
 
 <div class="cards">
   <% @dolls.each do |doll| %>
@@ -8,8 +8,8 @@
             <img src="<%= doll.image %>">
             <div class="card-product-infos">
               <h2 class="large-font"><%= doll.name.capitalize %></h2>
-              <p><strong>Condition: </strong><%= doll.condition.capitalize %></p>
-              <p><strong>Cursed: </strong><%= doll.cursed %></p>
+              <p>Condition: <%= doll.condition.capitalize %></p>
+              <p>Cursed: <%= doll.cursed %></p>
             </div>
       </div>
     <% end %>
