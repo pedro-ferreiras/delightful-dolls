@@ -4,7 +4,7 @@
 <div class="cards">
   <% @dolls.each do |doll| %>
     <div class="card-product mt-2 mb-3">
-        <img src="assets/doll.jpg" />
+        <img src="<%= doll.image %>">
         <div class="card-product-infos">
           <h2 class="large-font"><%= link_to "#{doll.name.capitalize}", doll_path(doll)%></h2>
           <p><strong>Condition:</strong><%= "  #{doll.condition.capitalize}" %></p>
