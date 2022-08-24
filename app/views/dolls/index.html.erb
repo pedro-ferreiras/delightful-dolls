@@ -3,7 +3,6 @@
 
 <div class="cards">
   <% @dolls.each do |doll| %>
-<<<<<<< HEAD
     <%= link_to doll_path(doll) do %>
       <div class="card-product mt-2 mb-3">
             <img src="<%= doll.image %>">
@@ -20,12 +19,3 @@
     <%= link_to "Create a new doll", new_doll_path %>
   </div>
 </div>
-=======
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(#)">
-      <%= link_to doll.name, doll_path(doll)%></p>
-    </div>
-  <% end %>
-</div>
-
-<%= link_to "Create a new doll", new_doll_path %>
->>>>>>> bd58f7715543ea16045769465d61dec3a4b2548f
