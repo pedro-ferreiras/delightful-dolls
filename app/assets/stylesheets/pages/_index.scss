@@ -4,13 +4,17 @@
 
 
 
-.name {
+.card-product-infos * {
   color: black;
-  text-decoration: none;
+
 }
-.name:visited {
+.card-product-infos a:visited {
   color: black;
-  text-decoration: none;
+
+}
+.card-product-infos a:hover {
+  color: black;
+
 }
 
 .large-font {
