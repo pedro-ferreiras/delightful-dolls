@@ -22,6 +22,8 @@
         <p class="alert"><%= alert %></p>
         <%= render "shared/navbar"  %>
         <%= yield %>
+        <%# Show footer if not on landing page %>
+        <%= render "shared/footer" if controller_name != 'pages' && action_name != 'home' %>
       </div>
     <% else %>
       <%= yield %>
@@ -29,8 +31,7 @@
 
 
 
-    <%# Show footer if not on landing page %>
-    <%= render "shared/footer" if controller_name != 'pages' && action_name != 'home' %>
+
 
   </body>
 </html>
