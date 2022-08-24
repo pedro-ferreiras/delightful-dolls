@@ -1,0 +1,13 @@
+.cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-category {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
