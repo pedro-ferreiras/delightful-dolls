@@ -1,19 +1,6 @@
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <%# <a class="navbar-brand $headers-font" >Delightful Dolls</a> %>
-    <%= link_to "Delightful Dolls", dolls_path, class: "navbar-brand $headers-font" %>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarRightAlignExample"
-      aria-controls="navbarRightAlignExample"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
-
+       <%= link_to "Delightful Dolls", dolls_path, class: "navbar-brand $headers-font" %>
     <div class="collapse navbar-collapse" id="navbarRightAlignExample">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <% if controller_name != 'sessions' && action_name != 'new' %>
