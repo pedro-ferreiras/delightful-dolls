@@ -1,2 +1,18 @@
 // Import page-specific CSS files here.
 @import "home";
+
+
+
+
+.name {
+  color: black;
+  text-decoration: none;
+}
+.name:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.large-font {
+  font-size: 30px;
+}

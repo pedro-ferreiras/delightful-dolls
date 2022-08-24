@@ -1,7 +1,19 @@
-<h1>Dolls...</h1>
+<div class="container  mt-5">
+  <h1 class="mt-2">Dolls</h1>
 
-<% @dolls.each do |doll| %>
-  <p><%= link_to doll.name, doll_path(doll)%></p>
-<% end %>
-
-<%= link_to "Create a new doll", new_doll_path %>
+<div class="cards">
+  <% @dolls.each do |doll| %>
+    <div class="card-product mt-2 mb-3">
+        <img src="assets/doll.jpg" />
+        <div class="card-product-infos">
+          <h2 class="large-font"><%= link_to "#{doll.name.capitalize}", doll_path(doll)%></h2>
+          <p><strong>Condition:</strong><%= "  #{doll.condition.capitalize}" %></p>
+          <p><strong>Cursed:</strong><%= "  #{doll.cursed}" %></p>
+        </div>
+    </div>
+    <% end %>
+</div>
+  <div class="btn btn-ghost mb-5 mt-3">
+    <%= link_to "Create a new doll", new_doll_path %>
+  </div>
+</div>
