@@ -10,7 +10,7 @@
   <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
     <div class="card p-4 bg-light.bg-gradient">
       <div class=" image d-flex flex-column justify-content-center align-items-center">
-        <img src="<%= @doll.image %>" height="150" width="150">
+        <%= cl_image_tag @doll.photo.key %>
         <span class="name mt-3" ><%= @doll.name %></span>
         <span class="state mt-3">Cursed: <%=curse%></span>
         <span class="condition mt-3">Condition: <%= @doll.condition %></span>
