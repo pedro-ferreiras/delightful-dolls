@@ -21,6 +21,12 @@ class DollsController < ApplicationController
     end
   end
 
+  def destroy
+    @doll = Doll.find(params[:id])
+    @doll.destroy
+    redirect_to user_path(current_user), status: :see_other
+  end
+
   private
 
   def doll_params
