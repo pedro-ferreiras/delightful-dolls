@@ -1,4 +1,7 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = Booking.where(user: current_user)
+  end
 
   def create
     @booking = Booking.new(booking_params)
@@ -7,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to doll_path(@doll), notice: 'created'
+      redirect_to bookings_path, notice: 'created'
     else
       render 'dolls/show', status: :unprocessable_entity
     end
