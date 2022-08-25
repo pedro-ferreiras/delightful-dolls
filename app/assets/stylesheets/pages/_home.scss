@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 a {
   text-decoration: none;
-  font-family: $headers-font;
+  font-family: 'Raleway';
   font-size: 25px;
 }
 
@@ -13,23 +13,27 @@ a:hover {
   color: aliceblue;
   height: 70vh;
   background-color: #6b4d57;
-  background-image: linear-gradient(181deg, #6b4d57 0%, #896a67 45%, #ddc8c4 100%);
+  background-image: url(https://res.cloudinary.com/dug5dmhjs/image/upload/v1661426827/production/doll_hero_banner_pteejk.jpg);
+  background-size: cover;
   padding-top: 50px;
 
+
   h1 {
-    font-family: 'DynaPuff', cursive;
-    text-shadow: 0px 3px 0px #b2a98f,
-                  0px 14px 10px rgba(0,0,0,0.15),
-                  0px 14px 2px rgba(0,0,0,0.1),
-                  0px 14px 30px rgba(0,0,0,0.1);
-    font-size: 3rem;
-    padding: 2rem;
+    font-family: $logo-font;
+    // text-shadow: 0px 3px 0px #b2a98f,
+    //               0px 14px 10px rgba(0,0,0,0.15),
+    //               0px 14px 2px rgba(0,0,0,0.1),
+    //               0px 14px 30px rgba(0,0,0,0.1);
+    font-size: 4rem;
+
+
   }
 
   p {
     // color: rgba(0,0,0,0.6);
-    text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
-                     0px -5px 35px rgba(255,255,255,0.3);
+    // text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+    //                  0px -5px 35px rgba(255,255,255,0.3);
+    font-size: 15px;
   }
 
   img {
@@ -67,4 +71,8 @@ a:hover {
   padding: 50px;
   background-color: $deep-taupe;
   border-radius: 5px;
+}
+
+.background-home {
+  background-color: white;
 }
