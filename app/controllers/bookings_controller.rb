@@ -16,6 +16,15 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    if @booking.destroy
+      redirect_to bookings_path, status: :see_other
+    else
+      render bookings_path, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def booking_params
