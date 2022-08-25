@@ -3,8 +3,11 @@
     <div class="card p-5" style="width: 40rem;">
       <div class="d-flex justify-content-center p-3">
 
-        <% current_user.photo.key %>
-        <%= cl_image_tag current_user.photo.key, height: 150, width: 150, crop: :fill, :radius => 100 %>
+        <% if !current_user.photo.key %>
+          <%= cl_image_tag "t6h03q0vwh96oxq00icwuxwpxcza", height: 150, width: 150, crop: :fill, :radius => 100 %>
+        <% else %>
+          <%= cl_image_tag current_user.photo.key, height: 150, width: 150, crop: :fill, :radius => 100 %>
+        <% end %>
       </div>
 
       <div class="card-body">
