@@ -6,6 +6,8 @@
   <% curse = "no" %>
   <% end %>
 
+
+
 <div class="container w-60 d-flex">
   <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
     <div class="card p-4 bg-light.bg-gradient">
@@ -19,6 +21,19 @@
     </div>
   </div>
 
+
+<div class="card mt-4 mb-4 p-3" style="width: 20rem;">
+  <%= cl_image_tag @doll.photo.key %>
+  <div class="card-body">
+    <h5 class="card-title"><%= @doll.name %></h5>
+    <p class="card-text"><strong>Description: </strong><%= @doll.description %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Cursed: <%=curse%></li>
+    <li class="list-group-item">Condition: <%= @doll.condition %></li>
+    <li class="list-group-item">A third item</li>
+  </ul>
+</div>
 
   <div class="mt-5 mb-5 p-3 mx-auto create">
     <h1>Create a booking</h1>
