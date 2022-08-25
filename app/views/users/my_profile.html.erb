@@ -1,13 +1,22 @@
 <div class="container w-75">
   <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
-    <div class="card" style="width: 40rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h1 class="card-title"><%= @user.full_name %></h1>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="card p-5" style="width: 40rem;">
+      <div class="d-flex justify-content-center p-3">
+
+        <% if !current_user.photo.key %>
+          <%= cl_image_tag "t6h03q0vwh96oxq00icwuxwpxcza", height: 150, width: 150, crop: :fill, :radius => 100 %>
+        <% else %>
+          <%= cl_image_tag current_user.photo.key, height: 150, width: 150, crop: :fill, :radius => 100 %>
+        <% end %>
       </div>
+
+      <div class="card-body">
+        <h1 class="card-title"><%= current_user.full_name %></h1>
+        <p class="card-text"><%= current_user.bio %></p>
+      </div>
+
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Email: <%= @user.email %> </li>
+        <li class="list-group-item">Email: <%= current_user.email %> </li>
         <li class="list-group-item">A second item</li>
         <li class="list-group-item mb-2 mt-2">
           <%= link_to "View your bookings", bookings_path, class:"btn-ghost-log-out pt-2 pb-2" %>
@@ -23,16 +32,16 @@
           <% current_user.dolls.each do |doll| %>
             <%= link_to doll_path(doll) do %>
               <div class="card-product mt-2 mb-3">
-                    <%= cl_image_tag doll.photo.key %>
-                    <div class="card-product-infos">
-                      <h2 class="large-font"><%= doll.name.capitalize %></h2>
-                      <p>Condition: <%= doll.condition.capitalize %></p>
-                      <p>Cursed: <%= doll.cursed %></p>
-                    </div>
+                <%= cl_image_tag doll.photo.key %>
+                <div class="card-product-infos">
+                  <h2 class="large-font"><%= doll.name.capitalize %></h2>
+                  <p>Condition: <%= doll.condition.capitalize %></p>
+                  <p>Cursed: <%= doll.cursed %></p>
+                </div>
               </div>
             <% end %>
           <% end %>
-  </div>
+        </div>
         </li>
       </div>
     </div>
@@ -42,7 +51,3 @@
 <div class="container d-flex align-items-center justify-content-center">
   <%=  link_to 'Go back', dolls_path, class:"btn btn-ghost mb-5 mt-3 mx-auto" %>
 </div>
-
-  <div class="btn-ghost-log-out pt-2 pb-2 mb-5 mt-2">
-    <%= link_to "Create a new doll", new_doll_path %>
-  </div>
