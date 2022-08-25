@@ -8,8 +8,8 @@
 
 
 
-<div class="container w-60 mt-4 d-flex justify-content-evenly">
-  <div class="card mt-4 mb-1 p-1" style="width: 40rem;">
+<div class="container mt-5 d-flex justify-content-evenly">
+  <div class="card w-50 h-50">
     <%= cl_image_tag @doll.photo.key %>
     <div class="card-body">
       <h5 class="card-title"><%= @doll.name %></h5>
@@ -18,23 +18,28 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Cursed: <%=curse%></li>
       <li class="list-group-item">Condition: <%= @doll.condition %></li>
+      <li class="list-group-item">Address: <%= current_user.address %></li>
       <li class="list-group-item">
         <%# Only show 'delete doll' button if doll belongs to current user %>
         <% if current_user.id == @doll.user_id %>
           <%=  link_to 'Delete doll', doll_path(@doll),
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-          class:"btn-ghost-log-out pt-2 pb-2" %>
+          class:"btn-ghost" %>
         <% end %>
       </li>
     </ul>
   </div>
 
-  <div class="mt-5 mb-5 p-3 create">
-    <h1>Create a booking</h1>
+  <div class="create">
+    <h2>Create a booking</h2>
       <%= simple_form_for [@doll, @booking] do |f| %>
         <%= f.input :start_date, as: :date, html5: true %>
         <%= f.input :end_date, as: :date, html5: true %>
-         <%= f.submit 'Create a booking', class: "btn-ghost-log-out" %>
+          <div class="row">
+            <div class="col text-center">
+              <%= f.submit 'Create a booking', class: "btn-ghost" %>
+            </div>
+          </div>
       <% end %>
   </div>
 </div>

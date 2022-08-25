@@ -1,1 +1,36 @@
 @import "showcard";
+
+.card-prod {
+  overflow: hidden;
+  width: 50%;
+  height: 150px;
+  background: #E8E9EB;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+
+}
+
+.card-prod img {
+  height: 100%;
+  width: 150px;
+  object-fit: cover;
+}
+
+.card-prod h2 {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+  padding-top: 12px;
+  color: black;
+}
+
+.card-prod p {
+  color: white;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  margin-top: 10px;
+  color: black;
+}
