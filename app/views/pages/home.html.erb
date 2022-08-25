@@ -27,7 +27,7 @@
     <% @dolls.limit(3).each do |doll| %>
     <%= link_to doll_path(doll) do %>
       <div class="card-product mt-2 mb-3">
-            <img src="<%= doll.image %>">
+            <%= cl_image_tag doll.photo.key %>
             <div class="card-product-infos">
               <h2 class="large-font"><%= doll.name.capitalize %></h2>
               <p>Condition: <%= doll.condition.capitalize %></p>
