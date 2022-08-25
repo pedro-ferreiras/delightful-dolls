@@ -18,8 +18,7 @@
     <%# Show navbar if not on landing page %>
     <% if controller_name != 'pages' && action_name != 'home' %>
       <div class="d-flex flex-column min-vh-100">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <%= render "shared/flashes" %>
         <%= render "shared/navbar"  %>
         <%= yield %>
         <%# Show footer if not on landing page %>
