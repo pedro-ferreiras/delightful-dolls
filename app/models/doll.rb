@@ -4,5 +4,4 @@ class Doll < ApplicationRecord
 
   validates :name, presence: true
   validates :description, presence: true, length: { minimum: 15 }
-
 end
