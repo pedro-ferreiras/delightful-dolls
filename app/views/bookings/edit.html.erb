@@ -1,0 +1,9 @@
+  <div class="mt-5 mb-5 p-3 mx-auto create">
+    <h1>Update booking</h1>
+      <%= simple_form_for [@booking] do |f| %>
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :end_date, as: :date, html5: true %>
+         <%= f.submit 'Update booking', class: "btn btn-ghost-log-out mb-5 mt-2 w-100" %>
+      <% end %>
+  </div>
+</div>

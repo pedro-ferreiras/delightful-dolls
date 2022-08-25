@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :dolls, only: %i[index show new create update] do
     resources :bookings, only: %i[create]
   end
-  resources :bookings, only: %i[index destroy]
+  resources :bookings, only: %i[index destroy edit update]
 
 
 
