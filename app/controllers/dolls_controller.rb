@@ -30,6 +30,6 @@ class DollsController < ApplicationController
   private
 
   def doll_params
-    params.require(:doll).permit(:name, :condition, :cursed)
+    params.require(:doll).permit(:name, :condition, :description, :cursed)
   end
 end
