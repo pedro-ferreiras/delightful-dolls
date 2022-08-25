@@ -8,8 +8,8 @@
 
 
 
-<div class="container w-60 d-flex justify-content-evenly">
-  <div class="card mt-4 mb-4 p-3" style="width: 20rem;">
+<div class="container w-60 mt-4 d-flex justify-content-evenly">
+  <div class="card mt-4 mb-1 p-1" style="width: 40rem;">
     <%= cl_image_tag @doll.photo.key %>
     <div class="card-body">
       <h5 class="card-title"><%= @doll.name %></h5>
@@ -18,7 +18,14 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Cursed: <%=curse%></li>
       <li class="list-group-item">Condition: <%= @doll.condition %></li>
-      <li class="list-group-item">A third item</li>
+      <li class="list-group-item">
+        <%# Only show 'delete doll' button if doll belongs to current user %>
+        <% if current_user.id == @doll.user_id %>
+          <%=  link_to 'Delete doll', doll_path(@doll),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+          class:"btn-ghost-log-out pt-2 pb-2" %>
+        <% end %>
+      </li>
     </ul>
   </div>
 
@@ -27,7 +34,7 @@
       <%= simple_form_for [@doll, @booking] do |f| %>
         <%= f.input :start_date, as: :date, html5: true %>
         <%= f.input :end_date, as: :date, html5: true %>
-         <%= f.submit 'Create a booking', class: "btn btn-ghost-log-out mb-5 mt-2 w-100" %>
+         <%= f.submit 'Create a booking', class: "btn-ghost-log-out" %>
       <% end %>
   </div>
 </div>
@@ -36,11 +43,6 @@
 
   <div class="container d-flex align-items-center justify-content-center">
 
-    <%# Only show 'delete doll' button if doll belongs to current user %>
-    <% if current_user.id == @doll.user_id %>
-      <%=  link_to 'Delete doll', doll_path(@doll),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-      class:"btn btn-ghost mb-5 mt-3" %>
-    <% end %>
+
     <%=  link_to 'Go back', dolls_path, class:"btn btn-ghost mb-5 mt-3" %>
   </div>
