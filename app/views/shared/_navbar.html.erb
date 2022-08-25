@@ -3,7 +3,9 @@
        <%= link_to "Delightful Dolls", user_signed_in? ? dolls_path : root_path, class: "navbar-brand $headers-font" %>
     <div class="collapse navbar-collapse" id="navbarRightAlignExample">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <% if controller_name != 'sessions' && action_name != 'new' %>
+
+        <%# Don't display the menus of the navbar if user is loging in or signing up %>
+        <% if current_user %>
           <li class="nav-item">
           <%= link_to "Dolls", dolls_path, class: "nav-link" %>
           </li>
