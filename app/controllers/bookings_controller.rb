@@ -8,11 +8,25 @@ class BookingsController < ApplicationController
     @doll = Doll.find(params[:doll_id])
     @booking.doll = @doll
     @booking.user = current_user
-
     if @booking.save
       redirect_to bookings_path, notice: 'created'
     else
       render 'dolls/show', status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+
+
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      redirect_to bookings_path, notice: 'updated'
+    else
+      render bookings_path, status: :unprocessable_entity
     end
   end
 
