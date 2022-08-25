@@ -6,7 +6,21 @@
   <% curse = "no" %>
   <% end %>
 
-<div class="container w-80 d-flex">
+
+
+<div class="container w-60 d-flex">
+  <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+    <div class="card p-4 bg-light.bg-gradient">
+      <div class="image d-flex flex-column justify-content-center align-items-center">
+        <%= cl_image_tag @doll.photo.key, class: "w-50" %>
+        <span class="name mt-3" ><strong>Name: </strong><%= @doll.name %></span>
+        <span class="state mt-3"><strong>Cursed: </strong><%=curse%></span>
+        <span class="condition mt-3"><strong>Condition: </strong><%= @doll.condition %></span>
+        <span class="condition mt-3"><strong>Description: </strong><%= @doll.description %></span>
+      </div>
+    </div>
+  </div>
+
 
 <div class="card mt-4 mb-4 p-3" style="width: 20rem;">
   <%= cl_image_tag @doll.photo.key %>
