@@ -8,34 +8,21 @@
 
 
 
-<div class="container w-60 d-flex">
-  <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
-    <div class="card p-4 bg-light.bg-gradient">
-      <div class="image d-flex flex-column justify-content-center align-items-center">
-        <%= cl_image_tag @doll.photo.key, class: "w-50" %>
-        <span class="name mt-3" ><strong>Name: </strong><%= @doll.name %></span>
-        <span class="state mt-3"><strong>Cursed: </strong><%=curse%></span>
-        <span class="condition mt-3"><strong>Condition: </strong><%= @doll.condition %></span>
-        <span class="condition mt-3"><strong>Description: </strong><%= @doll.description %></span>
-      </div>
+<div class="container w-60 d-flex justify-content-evenly">
+  <div class="card mt-4 mb-4 p-3" style="width: 20rem;">
+    <%= cl_image_tag @doll.photo.key %>
+    <div class="card-body">
+      <h5 class="card-title"><%= @doll.name %></h5>
+      <p class="card-text"><strong>Description: </strong><%= @doll.description %></p>
     </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Cursed: <%=curse%></li>
+      <li class="list-group-item">Condition: <%= @doll.condition %></li>
+      <li class="list-group-item">A third item</li>
+    </ul>
   </div>
 
-
-<div class="card mt-4 mb-4 p-3" style="width: 20rem;">
-  <%= cl_image_tag @doll.photo.key %>
-  <div class="card-body">
-    <h5 class="card-title"><%= @doll.name %></h5>
-    <p class="card-text"><strong>Description: </strong><%= @doll.description %></p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cursed: <%=curse%></li>
-    <li class="list-group-item">Condition: <%= @doll.condition %></li>
-    <li class="list-group-item">A third item</li>
-  </ul>
-</div>
-
-  <div class="mt-5 mb-5 p-3 mx-auto create">
+  <div class="mt-5 mb-5 p-3 create">
     <h1>Create a booking</h1>
       <%= simple_form_for [@doll, @booking] do |f| %>
         <%= f.input :start_date, as: :date, html5: true %>
@@ -53,7 +40,7 @@
     <% if current_user.id == @doll.user_id %>
       <%=  link_to 'Delete doll', doll_path(@doll),
       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-      class:"btn btn-ghost mb-5 mt-3 mx-auto" %>
+      class:"btn btn-ghost mb-5 mt-3" %>
     <% end %>
-    <%=  link_to 'Go back', dolls_path, class:"btn btn-ghost mb-5 mt-3 mx-auto" %>
+    <%=  link_to 'Go back', dolls_path, class:"btn btn-ghost mb-5 mt-3" %>
   </div>
