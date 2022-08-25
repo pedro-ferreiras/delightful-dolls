@@ -5,6 +5,7 @@ class DollsController < ApplicationController
 
   def show
     @doll = Doll.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
