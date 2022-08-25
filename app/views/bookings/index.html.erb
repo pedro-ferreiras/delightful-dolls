@@ -1,0 +1,16 @@
+<div class="container  mt-3">
+  <h1 class="mt-2">Your bookings</h1>
+  <div class="cards">
+
+<% @bookings.each do |booking| %>
+<div class="w-100 mt-5 mb-5 p-3 mx-auto create text-center">
+  <%= cl_image_tag booking.doll.photo.key, class:"w-100" %>
+  <p><strong>Doll:</strong> <%= booking.doll.name %></p>
+  <p><strong>What you've got to look after:</strong> <%= booking.doll.description %></p>
+  <p><strong>Start date:</strong> <%= booking.start_date %></p>
+  <p><strong>end date:</strong> <%= booking.end_date %></p>
+  <%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-ghost mb-5 mt-3 mx-auto"  %>
+</div>
+<% end %>
+</div>
+</div>
