@@ -17,14 +17,17 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
-  
+
 
   end
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.update(booking_params)
-    redirect_to bookings_path, notice: 'updated'
+    if @booking.update(booking_params)
+      redirect_to bookings_path, notice: 'updated'
+    else
+      render bookings_path, status: :unprocessable_entity
+    end
   end
 
   def destroy
