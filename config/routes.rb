@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  get "my_profile", to: "users#my_profile"
+
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
