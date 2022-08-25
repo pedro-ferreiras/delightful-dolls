@@ -1,5 +1,5 @@
 
-<div class="container mt-5 w-30">
+<div class="container login w-40 mt-5">
   <h1>Sign up</h1>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
@@ -7,6 +7,14 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
+      <%= f.input :first_name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "first-name" }%>
+      <%= f.input :last_name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "last-name" }%>
       <%= f.input :email,
                   required: true,
                   autofocus: true,

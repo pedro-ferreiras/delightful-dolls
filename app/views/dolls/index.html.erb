@@ -1,4 +1,7 @@
 <div class="container  mt-3">
+<% if user_signed_in? %>
+  <h2>Welcome <%= current_user.first_name %></h2>
+<% end %>
   <h1 class="mt-2">Select your doll...</h1>
 
 <div class="cards">
