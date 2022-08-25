@@ -7,7 +7,7 @@
         <%# Don't display the menus of the navbar if user is loging in or signing up %>
         <% if current_user %>
           <li class="nav-item nav-link" style="font-family: 'Alumni Sans Pinstripe';">
-            Welcome, <%= @user.first_name %>
+            Welcome, <%= current_user.first_name %>
           </li>
 
           <li class="nav-item">
