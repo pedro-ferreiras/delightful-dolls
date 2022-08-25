@@ -30,6 +30,15 @@
   </div>
 </div>
 
+
+  
   <div class="container d-flex align-items-center justify-content-center">
-    <%=  link_to 'Go back', dolls_path, class:"btn btn-ghost-log-out mb-5 mt-3 mx-auto" %>
+
+    <%# Only show 'delete doll' button if doll belongs to current user %>
+    <% if current_user.id == @doll.user_id %>
+      <%=  link_to 'Delete doll', doll_path(@doll),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+      class:"btn btn-ghost mb-5 mt-3 mx-auto" %>
+    <% end %>
+    <%=  link_to 'Go back', dolls_path, class:"btn btn-ghost mb-5 mt-3 mx-auto" %>
   </div>
