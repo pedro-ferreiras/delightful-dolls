@@ -12,7 +12,7 @@
   <div class="card w-50 h-50">
     <%= cl_image_tag @doll.photo.key %>
     <div class="card-body">
-      <h5 class="card-title"><%= @doll.name %></h5>
+      <h5 class="card-title"><%= @doll.name.capitalize %></h5>
       <p class="card-text"><strong>Description: </strong><%= @doll.description %></p>
     </div>
     <ul class="list-group list-group-flush">

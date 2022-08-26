@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :set_bookings, only: [:edit, :update, :destroy]
   def index
     @bookings = Booking.where(user: current_user)
   end
@@ -16,13 +17,9 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    @booking = Booking.find(params[:id])
-
-
   end
 
   def update
-    @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
       redirect_to bookings_path, notice: 'updated'
     else
@@ -31,7 +28,6 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @booking = Booking.find(params[:id])
     if @booking.destroy
       redirect_to bookings_path, status: :see_other
     else
@@ -43,5 +39,9 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
+  end
+
+  def set_bookings
+    @booking = Booking.find(params[:id])
   end
 end
