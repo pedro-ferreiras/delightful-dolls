@@ -1,5 +1,5 @@
 <div class="card-product mt-2 mb-3">
-  <%= cl_image_tag doll.photo.key %>
+  <%= cl_image_tag doll.photo.key.present? ? doll.photo.key : '' %>
   <div class="card-product-infos">
     <h2><%= doll.name.capitalize %></h2>
     <p>Condition: <%= doll.condition.capitalize %></p>
