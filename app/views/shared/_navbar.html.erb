@@ -1,12 +1,14 @@
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-       <%= link_to "Delightful Dolls", user_signed_in? ? dolls_path : root_path, class: "navbar-brand $headers-font" %>
+  <div class="navbar-brand">Delightful Dolls</div>
+
+       <%# <%= link_to "Delightful Dolls", user_signed_in? ? dolls_path : root_path, class: "navbar-brand $headers-font" %>
     <div class="collapse navbar-collapse" id="navbarRightAlignExample">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
         <%# Don't display the menus of the navbar if user is loging in or signing up %>
         <% if current_user %>
-          <li class="nav-item nav-link pl-2">
+          <li class="nav-item nav-link pl-2" id="navbar-username">
             Welcome, <%= current_user.first_name %>
           </li>
 

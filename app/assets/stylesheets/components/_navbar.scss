@@ -1,13 +1,18 @@
 .navbar {
+  font-family: $logo-font;
   justify-content: space-between;
   background: $black;
+  color: $white;
   height: 20%;
   position: sticky;
   top: 0;
+
 }
-.navbar * {
-  color: white;
+
+.navbar .navbar-collapse a {
+  transition-duration: 0.5s;
 }
+
 
 .navbar .navbar-collapse {
   flex-grow: 0;
@@ -18,7 +23,10 @@
   font-size: 22px;
 }
 .navbar .navbar-collapse a:hover {
-  color: black;
+  color: rgba(254, 254, 254, 0.6);
+  text-shadow: 2px 8px 6px rgba(255, 255, 255, 0.2),
+                  0px -5px 35px rgba(255,255,255,0.3);
+  transform: scale(1.2);
 }
 
 .navbar .navbar-brand img {
@@ -27,11 +35,15 @@
 
 
 .navbar-brand {
-  font-family: $headers-font;
+  font-family: $logo-font;
   font-size: 35px;
   color: white;
 }
 
 .navbar .navbar-brand a {
   color: white;
+}
+
+#navbar-username {
+  font-family: $logo-font;
 }
