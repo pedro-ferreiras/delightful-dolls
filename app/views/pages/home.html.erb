@@ -6,8 +6,8 @@
         <p class="lead">Feeling loney? </p>
         <p class="lead">Your loneliness ends now!</p>
         <p class="lead pb-3">Rent a doll and find inner peace. </p>
-        <%= link_to "Log in", new_user_session_path, class: "btn-ghost-log-out" %>
-        <%= link_to "Sign up", new_user_registration_path, class: "btn-ghost-log-out" %>
+        <%= link_to "Log in", new_user_session_path, class: "btn-ghost" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn-ghost" %>
       </div>
 
       <div></div>
@@ -17,7 +17,7 @@
   </div>
 
 </section>
-<div class="container justify-content-between mt-5">
+<div class="container justify-content-between mt-2">
 <h1>Want to find out more...</h1>
   <div class="cards">
     <% @dolls.limit(3).each do |doll| %>
