@@ -2,7 +2,7 @@
   <%= cl_image_tag doll.photo.key.present? ? doll.photo.key : '' %>
   <div class="card-product-infos">
     <h2><%= doll.name.capitalize %></h2>
-    <p>Condition: <%= doll.condition.capitalize %></p>
-    <p>Cursed: <%= doll.cursed %></p>
+    <p><strong>Condition: </strong><%= doll.condition.capitalize %></p>
+    <p><strong>Cursed: </strong><%= doll.cursed %></p>
   </div>
 </div>
