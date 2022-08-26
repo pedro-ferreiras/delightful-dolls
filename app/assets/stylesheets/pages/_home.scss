@@ -12,7 +12,7 @@ a:hover {
 .landing-page {
   color: aliceblue;
   height: 70vh;
-  background-color: #6b4d57;
+  // background-color: #6b4d57;
   background-image: url(https://res.cloudinary.com/dug5dmhjs/image/upload/v1661426827/production/doll_hero_banner_pteejk.jpg);
   background-size: cover;
   padding-top: 50px;
@@ -58,7 +58,7 @@ a:hover {
 }
 
 .create {
-    background-color: $pale-silver;
+    // background-color: $pale-silver;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     height: 100%;
@@ -69,12 +69,14 @@ a:hover {
 
 
 .login {
+  color: $black;
   width: 400px;
   margin-top: 50px;
   margin-bottom: 50px;
   padding: 50px;
-  background-color: $deep-taupe;
+  background-color: $white;
   border-radius: 5px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
 }
 
 .background-home {

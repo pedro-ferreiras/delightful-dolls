@@ -13,7 +13,7 @@
 </style>
   </head>
 
-  <body class= <%= current_page?(root_path) ? "background-home" : "" %> >
+  <body>
 
     <%# Show navbar if not on landing page %>
     <% if controller_name != 'pages' && action_name != 'home' %>
