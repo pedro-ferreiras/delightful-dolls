@@ -24,7 +24,7 @@
         <% if current_user.id == @doll.user_id %>
           <%=  link_to 'Delete doll', doll_path(@doll),
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-          class:"btn-ghost" %>
+          class:"btn btn-ghost" %>
         <% end %>
       </li>
     </ul>
@@ -38,7 +38,7 @@
 
           <div class="row">
             <div class="col text-center">
-              <%= f.submit 'Create a booking', class: "btn-ghost" %>
+              <%= f.submit 'Create a booking', class: "btn btn-ghost" %>
             </div>
           </div>
       <% end %>
