@@ -1,62 +1,62 @@
+
+// .btn-ghost {
+//   color: black;
+//   padding: 8px;
+//   border: 1px solid #4A4A4A;
+//   text-align: center;
+//   border-radius: 50px;
+//   font-weight: lighter;
+//   opacity: 0.6;
+//   transition: opacity 0.3s ease;
+//   text-decoration: none;
+//   // background: $pale-silver;
+// }
+
+// .btn-ghost:hover {
+//   transform: scale(1.05);
+//   color: black;
+//   text-decoration: none;
+// }
+
+// .btn-ghost a:visited {
+//   opacity: 1;
+//   color: black;
+//   text-decoration: none;
+// }
+
+
 .btn-ghost {
-  color: black;
-  padding: 8px;
-  border: 1px solid #4A4A4A;
-  text-align: center;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-  text-decoration: none;
-  background: $pale-silver;
-}
-
-.btn-ghost:hover {
-  transform: scale(1.05);
-  color: black;
-  text-decoration: none;
-}
-.btn-ghost-log-out {
-  color: black;
-  border: 1px solid black;
-  padding: 7px;
-
+  color: white;
   text-align: center;
   border-radius: 4px;
   font-weight: lighter;
   font-size: 1rem;
-  opacity: 0.6;
+  opacity: 1;
   transition: opacity 0.3s ease;
-  text-decoration: none;
-  background: white;
+  background: $dark-purple;
 
+  :hover {
+    // background: $deep-taupe;
+    color: $dark-purple;
+    background-color: $light-purple;
+  }
 }
 
-.btn-ghost-log-out:hover {
-  background: $deep-taupe;
-  color: white;
-  text-decoration: none;
-}
 
-.btn-ghost a:visited {
-  opacity: 1;
-  color: black;
-  text-decoration: none;
-}
 
-.btn-ghost-log-out a:visited {
-  opacity: 1;
-  color: black;
-  text-decoration: none;
-}
+// .btn-ghost a:visited {
+//   opacity: 1;
+//   color: black;
+//   text-decoration: none;
+// }
 
-a:active {
-  opacity: 1;
-  color: black;
-  text-decoration: none;
-}
+// a:active {
+//   opacity: 1;
+//   color: black;
+//   text-decoration: none;
+// }
 
-a {
-  text-decoration: none;
-  color: black;
-}
+// a {
+//   text-decoration: none;
+//   color: black;
+// }
