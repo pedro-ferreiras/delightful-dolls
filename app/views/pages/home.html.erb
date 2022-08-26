@@ -23,15 +23,8 @@
 <h1>Want to find out more...</h1>
   <div class="cards">
     <% @dolls.limit(3).each do |doll| %>
-    <%= link_to doll_path(doll) do %>
-      <div class="card-product mt-2 mb-3">
-            <%= cl_image_tag doll.photo.key %>
-            <div class="card-product-infos">
-              <h2 class="large-font"><%= doll.name.capitalize %></h2>
-              <p>Condition: <%= doll.condition.capitalize %></p>
-              <p>Cursed: <%= doll.cursed %></p>
-            </div>
-      </div>
+      <%= link_to doll_path(doll) do %>
+        <%= render "/shared/doll_card_small", doll: doll %>
       <% end %>
     <% end %>
   </div>
