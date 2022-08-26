@@ -1,5 +1,6 @@
 <div class="container  mt-3">
 
+<<<<<<< HEAD
 <div class= "d-flex mt-4 mb-4">
   <%= form_with url: dolls_path, method: :get, class: "search-bar" do %>
     <%= text_field_tag :query,
@@ -8,6 +9,13 @@
       placeholder: "Search by name, condition or description", class: "search"
     %>
     <%= submit_tag "Search", class: "btn btn-ghost pt-2" %>
+=======
+<div class="cards">
+  <% @dolls.each do |doll| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(#)">
+      <%= link_to doll.name, doll_path(doll)%></p>
+    </div>
+>>>>>>> bd58f7715543ea16045769465d61dec3a4b2548f
   <% end %>
 </div>
 
