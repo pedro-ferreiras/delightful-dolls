@@ -12,13 +12,13 @@
   <div class="card w-50 h-50">
     <%= cl_image_tag @doll.photo.key %>
     <div class="card-body">
-      <h5 class="card-title"><%= @doll.name.capitalize %></h5>
+      <h5 class="card-title"><strong><%= @doll.name.capitalize %></strong></h5>
       <p class="card-text"><strong>Description: </strong><%= @doll.description %></p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Cursed: <%=curse%></li>
-      <li class="list-group-item">Condition: <%= @doll.condition %></li>
-      <li class="list-group-item">Address: <%= current_user.address %></li>
+      <li class="list-group-item"><strong>Cursed: </strong><%=curse.capitalize%></li>
+      <li class="list-group-item"><strong>Condition: </strong><%= @doll.condition.capitalize %></li>
+      <li class="list-group-item"><strong>Address: </strong> 52 Doll Street</li>
       <li class="list-group-item">
         <%# Only show 'delete doll' button if doll belongs to current user %>
         <% if current_user.id == @doll.user_id %>
