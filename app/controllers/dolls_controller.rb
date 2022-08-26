@@ -25,7 +25,7 @@ class DollsController < ApplicationController
   def destroy
     @doll = Doll.find(params[:id])
     @doll.destroy
-    redirect_to user_path(current_user), status: :see_other
+    redirect_to my_profile_path, status: :see_other
   end
 
   private
