@@ -1,6 +1,19 @@
 class DollsController < ApplicationController
   def index
-    @dolls = Doll.all
+    if params[:query].present?
+      sql_query = <<~SQL
+        dolls.name @@ :query
+        OR dolls.condition @@ :query
+        OR dolls.description @@ :query
+      SQL
+      @dolls = Doll.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @dolls = Doll.all
+    end
+
+
+
+
   end
 
   def show

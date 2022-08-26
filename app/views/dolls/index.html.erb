@@ -1,4 +1,16 @@
 <div class="container  mt-3">
+
+<div class= "d-flex mt-4 mb-4">
+  <%= form_with url: dolls_path, method: :get, class: "search-bar" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search by name, condition or description", class: "search"
+    %>
+    <%= submit_tag "Search", class: "btn btn-ghost-log-out" %>
+  <% end %>
+</div>
+
   <h2 class="mt-2">Select your doll...</h2>
   <div class="cards">
     <% @dolls.each do |doll| %>
@@ -8,4 +20,3 @@
     <% end %>
   </div>
 </div>
-
